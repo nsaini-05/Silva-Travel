@@ -1,0 +1,25 @@
+
+  .card {
+    padding: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s;
+    background-color: #f6fafc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-title {
+    font-size: 2.4rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .card:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+    border: 1px solid #009874;
+  }
