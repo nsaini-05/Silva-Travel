@@ -1,0 +1,16 @@
+.header {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--brand-color);
+
+  }
+
+  .logo-text {
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  
