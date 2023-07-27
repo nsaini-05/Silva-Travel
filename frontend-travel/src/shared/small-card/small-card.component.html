@@ -1,4 +1,7 @@
-    <button class="card" (click) = "onCitySelect(cityData)">
-      <span class="btn-title">  
-        {{cityData.cityName}}</span>
-      </button>
+<button
+  class="card"
+  [ngClass]="{ 'card-active': checkIfCardSelected() }"
+  (click)="onCitySelect(cityData)"
+>
+  <span class="btn-title"> {{ cityData.cityName }}</span>
+</button>

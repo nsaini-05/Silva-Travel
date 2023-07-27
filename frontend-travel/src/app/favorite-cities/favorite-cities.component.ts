@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../services/backend.service';
+import { CityCardData } from '../dataTypes';
 
 @Component({
   selector: 'app-favorite-cities',
@@ -8,10 +9,9 @@ import { BackendService } from '../services/backend.service';
 })
 export class FavoriteCitiesComponent implements OnInit{
   constructor(private backendService:BackendService){
-    
   }
 
-  public cities: any = []
+  public cities: CityCardData []  = []
   ngOnInit(): void {
     this.cities = this.backendService.getFavoriteCities()
   }

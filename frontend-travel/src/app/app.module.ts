@@ -9,6 +9,7 @@ import { SharedModule } from 'src/shared/shared.module';
 import { FormComponent } from './form/form.component';
 import { WeatherResultsComponent } from './weather-results/weather-results.component';
 import { DescriptionResultsComponent } from './description-results/description-results.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { DescriptionResultsComponent } from './description-results/description-r
     FavoriteCitiesComponent,
     FormComponent,
     WeatherResultsComponent,
-    DescriptionResultsComponent
+    DescriptionResultsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

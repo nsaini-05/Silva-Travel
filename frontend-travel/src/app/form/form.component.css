@@ -50,6 +50,20 @@
 }
 
 
+.btn-disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.error-message{
+    font-size: 2rem;
+    justify-self: center;
+    grid-column: 1/-1;
+    color: #e52a5a;
+}
+
+
+
 @media (max-width: 41em) {
     html {
         font-size: 40%;

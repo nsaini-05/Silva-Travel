@@ -10,23 +10,23 @@ export class BackendService {
     return [
       {
         cityName: 'Calgary',
-        label: 'CL',
+        cityLabel: 'CL',
       },
       {
         cityName: 'Edmonton',
-        label: 'ED',
+        cityLabel: 'ED',
       },
       {
-        cityName: 'Calgary',
-        label: 'CL',
+        cityName: 'Montreal',
+        cityLabel: 'MTL',
       },
       {
-        cityName: 'Edmonton',
-        label: 'ED',
+        cityName: 'Toronto',
+        cityLabel: 'YYZ',
       },
       {
-        cityName: 'Delhi',
-        label: 'DL',
+        cityName: 'Vancouver',
+        cityLabel: 'VC',
       },
 
     ];

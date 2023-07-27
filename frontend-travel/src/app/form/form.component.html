@@ -1,11 +1,12 @@
 <div class="form-container">
-    <form class="cta-form">
+    <form class="cta-form" #ctaForm="ngForm" (ngSubmit)="handleSubmit(ctaForm.value)">
       <div>
         <label for="city-name">City Name</label>
         <input
           type="text"
           placeholder=""
-          id="city-name"
+          name="city-name"
+          [(ngModel)]="formData.cityName"
           [disabled]="true"
           required
         />
@@ -15,7 +16,10 @@
         <input type="date" id="forecast" name="forecast">
       </div>
       <div class="btn-container">
-        <button class="btn-submit">Submit</button>
+        <button class="btn-submit" 
+        [ngClass]="{'btn-disabled': !checkIfFormvalid()}"
+        [disabled] = "!checkIfFormvalid()">Submit</button>
       </div>
+      <div class="error-message">{{errorMessage}}</div>
       </form>
   </div>
