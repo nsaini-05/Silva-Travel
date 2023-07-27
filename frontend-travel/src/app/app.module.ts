@@ -8,6 +8,7 @@ import { FavoriteCitiesComponent } from './favorite-cities/favorite-cities.compo
 import { SharedModule } from 'src/shared/shared.module';
 import { FormComponent } from './form/form.component';
 import { WeatherResultsComponent } from './weather-results/weather-results.component';
+import { DescriptionResultsComponent } from './description-results/description-results.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WeatherResultsComponent } from './weather-results/weather-results.compo
     HeaderComponent,
     FavoriteCitiesComponent,
     FormComponent,
-    WeatherResultsComponent
+    WeatherResultsComponent,
+    DescriptionResultsComponent
   ],
   imports: [
     BrowserModule,
