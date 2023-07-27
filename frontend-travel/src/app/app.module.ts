@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FavoriteCitiesComponent } from './favorite-cities/favorite-cities.component';
 import { SharedModule } from 'src/shared/shared.module';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FavoriteCitiesComponent
+    FavoriteCitiesComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
