@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardFormDataServiceService } from 'src/app/services/shared/card-form-data-service.service';
-import { CityCardData } from '../dataTypes';
+import { CityCardData, WeatherFormData } from '../dataTypes';
+import { WeatherapiService } from '../services/weatherapi/weatherapi.service';
 
 @Component({
   selector: 'app-form',
@@ -8,10 +9,12 @@ import { CityCardData } from '../dataTypes';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  formData: any = {};
+  formData: WeatherFormData = {cityName : '' , forecastDate : ''};
   errorMessage: string = '';
 
-  constructor(private cardFormService: CardFormDataServiceService) {}
+  constructor(private cardFormService: CardFormDataServiceService,
+    private weatherApi : WeatherapiService
+    ) {}
 
   ngOnInit(): void {
     this.cardFormService
@@ -28,8 +31,8 @@ export class FormComponent implements OnInit {
     return false;
   }
 
-  handleSubmit(formData : any){
-    console.log(formData)
+  handleSubmit(){
+    this.weatherApi.getWeatherData(this.formData)
   }
 
 

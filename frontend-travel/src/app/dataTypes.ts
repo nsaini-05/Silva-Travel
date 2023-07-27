@@ -3,3 +3,8 @@ export interface CityCardData {
     cityLabel : string;
     countryCode: string
 }
+
+export interface WeatherFormData {
+    cityName : string,
+    forecastDate : string
+}

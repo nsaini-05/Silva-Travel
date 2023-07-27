@@ -20,10 +20,8 @@ export class CardFormDataServiceService {
   constructor() { }
 
   setSelectedCard(cityData : CityCardData) {
-    console.log(cityData)
    this.selectedCitySubject.next(cityData)
    this.selectedCityCard = cityData
-
   }
 
   getSelectedCard(): Observable<CityCardData> {

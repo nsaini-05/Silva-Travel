@@ -11,6 +11,7 @@ import { WeatherResultsComponent } from './weather-results/weather-results.compo
 import { DescriptionResultsComponent } from './description-results/description-results.component';
 import { FormsModule } from '@angular/forms';
 import { ionAirplaneOutline } from '@ng-icons/ionicons';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ionAirplaneOutline } from '@ng-icons/ionicons';
     AppRoutingModule,
     SharedModule,
     FormsModule,
-    NgIconsModule.withIcons({ ionAirplaneOutline })
+    NgIconsModule.withIcons({ ionAirplaneOutline }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
