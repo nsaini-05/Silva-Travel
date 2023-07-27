@@ -1,7 +1,6 @@
 <div class="cards-container">
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
+    <ng-container  *ngFor="let city of cities">
+        <app-small-card [cityData] = "city"></app-small-card>
+    </ng-container>
+   
 </div>
