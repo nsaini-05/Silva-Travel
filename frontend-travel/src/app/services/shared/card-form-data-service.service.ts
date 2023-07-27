@@ -9,7 +9,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CardFormDataServiceService {
   private selectedCityCard : CityCardData = {
     cityName : "",
-    cityLabel : ""
+    cityLabel : "",
+    countryCode : ""
   }
   
   public selectedCitySubject = new BehaviorSubject<CityCardData>(this.selectedCityCard);
@@ -19,6 +20,7 @@ export class CardFormDataServiceService {
   constructor() { }
 
   setSelectedCard(cityData : CityCardData) {
+    console.log(cityData)
    this.selectedCitySubject.next(cityData)
    this.selectedCityCard = cityData
 

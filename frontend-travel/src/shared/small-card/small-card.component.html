@@ -3,5 +3,8 @@
   [ngClass]="{ 'card-active': checkIfCardSelected() }"
   (click)="onCitySelect(cityData)"
 >
+<img
+  src="{{ cityData.countryCode ? 'https://flagcdn.com/w40/' + cityData.countryCode + '.png' : '' }}"
+  width="40"/>
   <span class="btn-title"> {{ cityData.cityName }}</span>
 </button>

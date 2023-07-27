@@ -11,22 +11,30 @@ export class BackendService {
       {
         cityName: 'Calgary',
         cityLabel: 'CL',
+        countryCode: 'ca'
       },
       {
         cityName: 'Edmonton',
-        cityLabel: 'ED',
+        cityLabel: 'ca',
+        countryCode: 'ca'
+
       },
       {
         cityName: 'Montreal',
-        cityLabel: 'MTL',
+        cityLabel: 'ca',
+        countryCode: 'ca'
+
       },
       {
         cityName: 'Toronto',
-        cityLabel: 'YYZ',
+        cityLabel: 'ca',
+        countryCode: 'ca'
+
       },
       {
         cityName: 'Vancouver',
-        cityLabel: 'VC',
+        cityLabel: 'ca',
+        countryCode: 'ca'
       },
 
     ];

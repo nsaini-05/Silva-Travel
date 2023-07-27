@@ -15,7 +15,11 @@ export class SmallCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() cityData: any = {};
+  @Input() cityData: CityCardData = {
+    cityName : "",
+    cityLabel : "",
+    countryCode : "",
+  };
 
   onCitySelect(cityData: CityCardData) {
     this.cardFormService.setSelectedCard(cityData);
