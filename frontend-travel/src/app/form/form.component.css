@@ -1,27 +1,27 @@
-.form-container{
+.form-container {
     background-color: #f2f2f2;
     padding: 1.6rem;
     border-radius: 10px;
     margin-bottom: 2.2rem;
-  }
+}
 
-  .cta-form {
+.cta-form {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 3.2rem;
     row-gap: 1.6rem;
     align-items: end;
-  }
+}
 
-  .cta-form label {
+.cta-form label {
     display: block;
     font-size: 1.6rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
 }
-  
-  
-  .cta-form input {
+
+
+.cta-form input {
     width: 100%;
     padding: 1.2rem;
     font-size: 1.8rem;
@@ -31,14 +31,14 @@
     border: none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: inherit;
-  }
+}
 
-  .btn-container{
+.btn-container {
     justify-self: center;
     grid-column: span 2;
-  }
+}
 
-  .btn-submit{
+.btn-submit {
     border: none;
     background-color: #f49f50;
     padding: 1.4rem 2.8rem;
@@ -47,4 +47,20 @@
     font-size: 2rem;
     font-weight: 700;
     font-family: inherit;
-  }
+}
+
+
+@media (max-width: 41em) {
+    html {
+        font-size: 40%;
+    }
+
+    .cta-form {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-container {
+        justify-self: center;
+        grid-column: span 1;
+    }
+}

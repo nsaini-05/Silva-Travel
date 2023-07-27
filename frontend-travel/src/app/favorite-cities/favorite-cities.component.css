@@ -5,3 +5,10 @@
   align-items: start;
   margin-bottom: 4.2rem;
 }
+
+
+@media (max-width: 41em) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

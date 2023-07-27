@@ -37,3 +37,28 @@ body {
   align-items: center;
 }
 
+
+
+@media (max-width: 62.5em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 52em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 46em) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 41em) {
+  .results-container {
+    grid-template-columns: 1fr;
+  }
+}
