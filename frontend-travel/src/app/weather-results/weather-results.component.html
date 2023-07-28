@@ -1,27 +1,26 @@
-<div class="weather-results" *ngIf="weatherData" [@fadeInOut]>
+<div class="weather-results" *ngIf = "errorMessage === '' && weatherData.temprature" [@fadeInOut]>
     <div class="weather-results-header">
-        <img src="https://openweathermap.org/img/wn/10d@2x.png">
+        <img 
+        src="{{ weatherData.icon ? 'https://openweathermap.org/img/wn/' + weatherData.icon + '@2x.png' : '' }}"
+        >
         <p class="city-name">
-            {{weatherData?.name}}
+            {{weatherData.name}}
         </p>
-        <p class="city-temp">15C</p>
-        <p class="city-date">11 Jan 2023</p>
+        <p class="city-temp">{{weatherData.temprature}}{{'°'}}</p>
+        <p class="city-date">Current Weather</p>
     </div>
     <ul class="list">
         <li class="list-item">
             <span class="parameter">Wind</span>
-            <span>15km/H</span>
-
+            <span class="parameter-value">{{weatherData.windspeed}}{{' km/h'}}</span>
         </li>
         <li class="list-item">
             <span class="parameter">Feels Like</span>
-            <span>15km/H</span>
+            <span class="parameter-value">{{weatherData.feelsLike}}{{'°C'}}</span>
         </li>
         <li class="list-item">
-            <span class="parameter">Humid</span>
-            <span>15km/H</span>
-
+            <span class="parameter">Humidity</span>
+            <span class="parameter-value">{{weatherData.humidity}}%</span>
         </li>
-
     </ul>
 </div>

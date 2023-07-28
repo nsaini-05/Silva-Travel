@@ -9,11 +9,12 @@ import { WeatherapiService } from '../services/weatherapi/weatherapi.service';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  formData: WeatherFormData = {cityName : '' , forecastDate : ''};
+  formData: WeatherFormData = { cityName: '', forecastDate: '' };
   errorMessage: string = '';
-  constructor(private cardFormService: CardFormDataServiceService,
-    private weatherApi : WeatherapiService
-    ) {}
+  constructor(
+    private cardFormService: CardFormDataServiceService,
+    private weatherApi: WeatherapiService
+  ) {}
 
   ngOnInit(): void {
     this.cardFormService
@@ -21,8 +22,9 @@ export class FormComponent implements OnInit {
       .subscribe(
         (val: CityCardData) => (this.formData.cityName = val.cityName)
       );
-      this.weatherApi.weatherApiServiceStatus.subscribe((val:any) => this.errorMessage = val.error)
-      
+    this.weatherApi.weatherApiServiceStatus.subscribe(
+      (val: any) => (this.errorMessage = val.error)
+    );
   }
 
   checkIfFormvalid(): boolean {
@@ -32,10 +34,7 @@ export class FormComponent implements OnInit {
     return false;
   }
 
-  handleSubmit(){
-    this.weatherApi.getWeatherData(this.formData)
+  handleSubmit() {
+    this.weatherApi.getWeatherData(this.formData);
   }
-
-
-
 }

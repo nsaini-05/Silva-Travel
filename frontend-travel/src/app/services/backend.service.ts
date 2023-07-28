@@ -9,7 +9,7 @@ export class BackendService {
   getFavoriteCities() {
     return [
       {
-        cityName: 'Calgary',
+        cityName: 'Delhi',
         cityLabel: 'CL',
         countryCode: 'ca'
       },
