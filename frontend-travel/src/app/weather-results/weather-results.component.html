@@ -1,8 +1,8 @@
-<div class="weather-results">
+<div class="weather-results" *ngIf="weatherData" [@fadeInOut]>
     <div class="weather-results-header">
         <img src="https://openweathermap.org/img/wn/10d@2x.png">
         <p class="city-name">
-            Edmonton
+            {{weatherData?.name}}
         </p>
         <p class="city-temp">15C</p>
         <p class="city-date">11 Jan 2023</p>

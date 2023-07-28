@@ -10,8 +10,10 @@ import { FormComponent } from './form/form.component';
 import { WeatherResultsComponent } from './weather-results/weather-results.component';
 import { DescriptionResultsComponent } from './description-results/description-results.component';
 import { FormsModule } from '@angular/forms';
-import { ionAirplaneOutline } from '@ng-icons/ionicons';
+import { ionAirplaneSharp } from '@ng-icons/ionicons';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -27,8 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SharedModule,
     FormsModule,
-    NgIconsModule.withIcons({ ionAirplaneOutline }),
-    HttpClientModule
+    NgIconsModule.withIcons({ ionAirplaneSharp }),
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

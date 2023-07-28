@@ -11,7 +11,6 @@ import { WeatherapiService } from '../services/weatherapi/weatherapi.service';
 export class FormComponent implements OnInit {
   formData: WeatherFormData = {cityName : '' , forecastDate : ''};
   errorMessage: string = '';
-
   constructor(private cardFormService: CardFormDataServiceService,
     private weatherApi : WeatherapiService
     ) {}
@@ -22,6 +21,8 @@ export class FormComponent implements OnInit {
       .subscribe(
         (val: CityCardData) => (this.formData.cityName = val.cityName)
       );
+      this.weatherApi.weatherApiServiceStatus.subscribe((val:any) => this.errorMessage = val.error)
+      
   }
 
   checkIfFormvalid(): boolean {
