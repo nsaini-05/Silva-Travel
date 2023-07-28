@@ -1,5 +1,5 @@
-<div class="description-container">
+<div class="description-container" *ngIf="description" [@fadeInOut]>
     <p class="description-text">
-        Calgary, a cosmopolitan Alberta city with numerous skyscrapers, owes its rapid growth to its status as the centre of Canada’s oil industry. 
+       {{description}}
     </p>
 </div>

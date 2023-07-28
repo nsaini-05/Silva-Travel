@@ -2,6 +2,7 @@
   "name": "silva-travel",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "server.js",
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -28,6 +29,7 @@
     "content-type": "^1.0.5",
     "cookie": "^0.5.0",
     "cookie-signature": "^1.0.6",
+    "cors": "^2.8.5",
     "date-fns": "^2.30.0",
     "debug": "^3.2.7",
     "depd": "^2.0.0",
@@ -119,7 +121,6 @@
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon backend-travel/server.js"

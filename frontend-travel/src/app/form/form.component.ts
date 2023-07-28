@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CardFormDataServiceService } from 'src/app/services/shared/card-form-data-service.service';
 import { CityCardData, WeatherFormData } from '../dataTypes';
 import { WeatherapiService } from '../services/weatherapi/weatherapi.service';
-
+import { BackendService } from '../services/backend.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -13,7 +13,8 @@ export class FormComponent implements OnInit {
   errorMessage: string = '';
   constructor(
     private cardFormService: CardFormDataServiceService,
-    private weatherApi: WeatherapiService
+    private weatherApi: WeatherapiService,
+    private backendApi : BackendService
   ) {}
 
   ngOnInit(): void {
@@ -58,5 +59,6 @@ export class FormComponent implements OnInit {
 
   handleSubmit() {
     this.weatherApi.getWeatherData(this.formData);
+    this.backendApi.getCityDescriptionByName(this.formData.cityName)
   }
 }

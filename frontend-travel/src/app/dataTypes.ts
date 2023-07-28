@@ -37,3 +37,10 @@ export interface CoordinatesResponse {
   country: string;
   state: string;
   }
+
+
+  export interface BackendApiResponse {
+    data : any,
+    error:string,
+    loading : boolean
+}

@@ -13,6 +13,12 @@ export class FavoriteCitiesComponent implements OnInit{
 
   public cities: CityCardData []  = []
   ngOnInit(): void {
-    this.cities = this.backendService.getFavoriteCities()
+    this.backendService.getFavoriteCities().subscribe((val:any)=>{
+      this.cities = val
+    }
+    
+    
+    )
+
   }
 }
