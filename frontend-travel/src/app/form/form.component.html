@@ -11,8 +11,8 @@
         />
       </div>
       <div>
-        <label for="forecastDate">Select Date For Forecast</label>
-        <input type="date" id="forecastDate" [(ngModel)]="formData.forecastDate" name="forecastDate">
+        <label for="forecastDate">Select Date For Forecast (Optional)</label>
+        <input type="date" id="forecastDate" [ngModel]="formData.forecastDate" (ngModelChange) = "selectDate($event)" name="forecastDate">
       </div>
       <div class="btn-container">
         <button class="btn-submit" 

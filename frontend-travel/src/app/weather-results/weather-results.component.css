@@ -53,5 +53,7 @@
     font-weight: 700;
 }
 
-
-
+.error-message{
+    font-size: 2rem;
+    color: #e52a5a;
+}

@@ -18,3 +18,21 @@ export interface WeatherData {
     feelsLike : string,
     humidity: string
 }
+
+export interface WeatherApiResponse {
+    data : any,
+    date?:string,
+    error:string,
+    loading : boolean
+}
+
+export interface CoordinatesResponse {
+    name: string;
+  local_names: {
+    [key: string]: string;
+  };
+  lat: string;
+  lon: string;
+  country: string;
+  state: string;
+  }
