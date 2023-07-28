@@ -1,7 +1,8 @@
 export interface CityCardData {
     cityName : string,
-    cityLabel : string;
-    countryCode: string
+    cityLabel : string,
+    countryCode: string,
+    description?:string
 }
 
 export interface WeatherFormData {
