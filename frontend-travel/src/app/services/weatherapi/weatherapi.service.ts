@@ -14,7 +14,7 @@ export class WeatherapiService {
   constructor(private http: HttpClient) {}
 
   private apiKey = '45b8bb7fd80cc75d65e6d56ed991d131';
-  private cordsUrl = 'http://api.openweathermap.org/geo/1.0/direct';
+  private cordsUrl = 'https://api.openweathermap.org/geo/1.0/direct';
   private weatherApiUrl = 'https://api.openweathermap.org/data/2.5/';
   private errorMessage = 'Something went wrong while getting weather data';
 
