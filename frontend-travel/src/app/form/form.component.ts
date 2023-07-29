@@ -23,9 +23,6 @@ export class FormComponent implements OnInit {
       .subscribe(
         (val: CityCardData) => (this.formData.cityName = val.cityName)
       );
-    this.weatherApi.weatherApiServiceStatus.subscribe(
-      (val: any) => (this.errorMessage = val.error)
-    );
   }
 
   checkIfFormvalid(): boolean {
@@ -48,7 +45,7 @@ export class FormComponent implements OnInit {
     return true
   }
 
-  selectDate(e:any){
+  selectDate(e:string){
     this.formData.forecastDate = e
     if(!this.chekIfDateIsValid()){
       this.errorMessage = "Please select a date within the next 5 days."

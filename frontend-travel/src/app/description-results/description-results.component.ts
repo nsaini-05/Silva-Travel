@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../services/backend.service';
 import { SharedModule } from 'src/shared/shared.module';
+import { BackendApiResponse } from '../dataTypes';
 
 @Component({
   selector: 'app-description-results',
@@ -10,13 +11,18 @@ import { SharedModule } from 'src/shared/shared.module';
 })
 export class DescriptionResultsComponent implements OnInit{
   description:string = ""
+  errorMessage:string = ""
   constructor(private backendApi : BackendService){
   }
   ngOnInit(): void {
-    console.log("neeraj")
-    this.backendApi.backendApiServiceStatus.subscribe((val:any)=> {
-      console.log(val)
-      this.description =val.data
+    this.backendApi.backendApiServiceStatus.subscribe((val:BackendApiResponse)=> {
+      if (!val.error && val.data) {
+        this.errorMessage = ''
+        this.description = val.data
+      } else {
+        this.description = ""
+        this.errorMessage = val.error
+      }
     })
   }
 }

@@ -21,5 +21,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log("Server started 300");
+  console.log(`Server started on ${port}`);
 });

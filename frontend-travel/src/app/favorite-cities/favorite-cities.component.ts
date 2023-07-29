@@ -5,20 +5,15 @@ import { CityCardData } from '../dataTypes';
 @Component({
   selector: 'app-favorite-cities',
   templateUrl: './favorite-cities.component.html',
-  styleUrls: ['./favorite-cities.component.css']
+  styleUrls: ['./favorite-cities.component.css'],
 })
-export class FavoriteCitiesComponent implements OnInit{
-  constructor(private backendService:BackendService){
-  }
+export class FavoriteCitiesComponent implements OnInit {
+  constructor(private backendService: BackendService) {}
 
-  public cities: CityCardData []  = []
+  public cities: CityCardData[] = [];
   ngOnInit(): void {
-    this.backendService.getFavoriteCities().subscribe((val:any)=>{
-      this.cities = val
-    }
-    
-    
-    )
-
+    this.backendService.getFavoriteCities().subscribe((val: any) => {
+      this.cities = val;
+    });
   }
 }

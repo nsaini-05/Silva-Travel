@@ -8,3 +8,8 @@
     text-align: center;
     line-height: 1.6;
 }
+
+.error-message{
+    font-size: 2rem;
+    color: #e52a5a;
+}

@@ -22,14 +22,18 @@ export class WeatherResultsComponent implements OnInit {
   };
   constructor(private weatherApi: WeatherapiService) {}
   ngOnInit(): void {
-    this.weatherApi.weatherApiServiceStatus.subscribe((val: any) => {
-      this.clearValues();
-      if (!val.error && val.data) {
-        (val.data?.list?.length > 0) ? this.filterFromForeCastData(val) : this.fillValues(val.data)
-      } else {
-        this.errorMessage = val.error;
+    this.weatherApi.weatherApiServiceStatus.subscribe(
+      (val: WeatherApiResponse) => {
+        if (!val.error && val.data) {
+          val.data?.list?.length > 0
+            ? this.filterFromForeCastData(val)
+            : this.fillValues(val.data);
+        } else {
+          this.clearValues();
+          this.errorMessage = val.error;
+        }
       }
-    });
+    );
   }
 
   fillValues(data: any) {
@@ -39,7 +43,7 @@ export class WeatherResultsComponent implements OnInit {
     this.weatherData.windspeed = data.wind.speed;
     this.weatherData.feelsLike = data.main.feels_like;
     this.weatherData.humidity = data.main.humidity;
-    this.weatherData.date = data.date ? data.date : "Current Weather"
+    this.weatherData.date = data.date ? data.date : 'Current Weather';
   }
   clearValues() {
     this.weatherData = {
@@ -51,14 +55,15 @@ export class WeatherResultsComponent implements OnInit {
       feelsLike: '',
       humidity: '',
     };
+    this.errorMessage = ''
   }
-  filterFromForeCastData(response:WeatherApiResponse){
-    const {date,data} = response
-    const filteredValue = data?.list.find((weatherResult:any) => 
-      weatherResult.dt_txt.split(" ")[0] === date
-    )
-    filteredValue.name = data.city.name
-    filteredValue.date = date
-    this.fillValues(filteredValue)
+  filterFromForeCastData(response: WeatherApiResponse) {
+    const { date, data } = response;
+    const filteredValue = data?.list.find(
+      (weatherResult: any) => weatherResult.dt_txt.split(' ')[0] === date
+    );
+    filteredValue.name = data.city.name;
+    filteredValue.date = date;
+    this.fillValues(filteredValue);
   }
 }

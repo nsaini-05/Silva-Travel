@@ -8,21 +8,29 @@ import { BackendApiResponse } from '../dataTypes';
 export class BackendService {
   constructor(private http: HttpClient) {}
   apiUrl = 'http://127.0.0.1:3000/api/favorites/';
+  private errorMessage = "Something went wrong while getting description"
+
   backendApiServiceStatus = new EventEmitter<Object>();
   getFavoriteCities() {
     return this.http.get(this.apiUrl);
   }
 
   getCityDescriptionByName(cityName: string) {
-    this.http.get(this.apiUrl + cityName).subscribe((val: any) => {
+    this.http.get<string>(this.apiUrl + cityName).subscribe((val: string) => {
       if (val) {
         this.backendApiServiceStatus.emit({
           data: val,
           loading: false,
           error: '',
         });
-      } else {
-      }
-    });
-  }
+      } 
+  },
+  (error) =>
+  this.backendApiServiceStatus.emit({
+    data: '',
+    loading: false,
+    error: this.errorMessage,
+  })
+  )}
+
 }
