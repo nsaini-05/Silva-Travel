@@ -6,6 +6,11 @@
   margin-bottom: 4.2rem;
 }
 
+@media (max-width: 65em) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 @media (max-width: 41em) {
   .cards-container {

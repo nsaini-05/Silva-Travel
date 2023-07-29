@@ -3,8 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  --brand-color:  #009874;
-
+  --brand-color: #009874;
 }
 
 html {
@@ -18,34 +17,30 @@ body {
   font-weight: 400;
 }
 
-
-.container{
-    margin-top: 4.8rem;
+.container {
+  margin-top: 4.8rem;
 }
 
-.main-container{
+.main-container {
   margin: 0 auto;
   max-width: 120rem;
   padding: 0 3.2rem;
 }
 
-
 .results-container {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.6rem;
   align-items: center;
 }
 
-
-
-@media (max-width: 62.5em) {
+@media (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 }
 
-@media (max-width: 52em) {
+@media (max-width: 59em) {
   html {
     font-size: 50%;
   }
