@@ -15,8 +15,7 @@ export const getFavoriteDescription = (req,res) =>{
   if(city){
     res.status(200).json(city.description);
   }else{
-    const err = new Error();
-    next(err); 
+    res.status(404).json({ error: "City not found" });
   }
 }
 

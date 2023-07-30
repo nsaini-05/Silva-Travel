@@ -7,7 +7,7 @@ import {
 } from "./controllers/favoriteController.js";
 import path from 'path'
 dotenv.config()
-const app = express();
+export const app = express();
 app.use(cors());
 
 
@@ -27,6 +27,7 @@ if(process.env.NODE_ENV === 'PRODUCTION'){
 app.use((err, req, res, next) => {
   res.status(500).json({ error: "Something went wrong" });
 });
+
 app.listen(5000 || process.env.PORT, () => {
   console.log(`Server Started on port ${process.env.PORT}`);
 });
