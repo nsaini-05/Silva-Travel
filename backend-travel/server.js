@@ -10,13 +10,19 @@ dotenv.config();
 export const app = express();
 app.use(cors());
 
+const port = 5000 || process.env.PORT;
+
+/* End Points */
 app.get("/api/favorites", (req, res) => {
   getFavorites(req, res);
 });
+
 app.get("/api/favorites/description", (req, res) => {
   getFavoriteDescription(req, res);
 });
+
 const __dirname = path.resolve();
+
 if (process.env.NODE_ENV === "PRODUCTION") {
   app.use(
     express.static(
@@ -35,10 +41,11 @@ if (process.env.NODE_ENV === "PRODUCTION") {
     );
   });
 }
+
 app.use((err, req, res, next) => {
   res.status(500).json({ error: "Something went wrong" });
 });
 
-app.listen(5000 || process.env.PORT, () => {
-  console.log(`Server Started on port ${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`Server Started on port ${port}`);
 });

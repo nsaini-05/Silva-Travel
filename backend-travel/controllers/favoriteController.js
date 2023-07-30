@@ -2,7 +2,10 @@ import { favoriteCities } from "../data/db.js";
 
 export const getFavorites = (req, res) => {
   if (favoriteCities) {
-    res.status(200).json(favoriteCities);
+    const alteredData = favoriteCities.map(
+      ({ description, ...others }) => others
+    );
+    res.status(200).json(alteredData);
   } else {
     const err = new Error({ message: "Failed to Fetch Favorites" });
     next(err);
