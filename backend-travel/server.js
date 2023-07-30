@@ -9,10 +9,12 @@ import path from 'path'
 dotenv.config()
 const app = express();
 app.use(cors());
+
+
 app.get("/api/favorites", (req, res) => {
   getFavorites(req, res);
 });
-app.get("/api/favorites/:cityname", (req, res) => {
+app.get("/api/favorites/description", (req, res) => {
   getFavoriteDescription(req, res);
 });
 const __dirname = path.resolve()
@@ -25,6 +27,6 @@ if(process.env.NODE_ENV === 'PRODUCTION'){
 app.use((err, req, res, next) => {
   res.status(500).json({ error: "Something went wrong" });
 });
-app.listen(process.env.PORT || 5000 , () => {
-  console.log(`Server Started on port ${process.env.PORT} in ${process.env.NODE_ENV}`);
+app.listen(5000 || process.env.PORT, () => {
+  console.log(`Server Started on port ${process.env.PORT}`);
 });

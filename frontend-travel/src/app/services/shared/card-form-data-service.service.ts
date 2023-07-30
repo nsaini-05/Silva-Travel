@@ -29,7 +29,7 @@ export class CardFormDataServiceService {
   }
 
   isCardSelected(cityData:CityCardData):boolean {
-    if(this.selectedCityCard.cityName === cityData.cityName){
+    if(this.selectedCityCard.cityName.toLowerCase() === cityData.cityName.toLowerCase()){
       return true;
     }
     return false;

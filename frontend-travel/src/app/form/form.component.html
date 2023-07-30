@@ -5,9 +5,9 @@
         <input
         type="text" 
         id= "cityName"
-        [(ngModel)]="formData.cityName"
+        [ngModel]="formData.cityName"
+        (ngModelChange) = "setCityName($event)" 
         name="cityName"
-        [disabled]="true"
         />
       </div>
       <div>

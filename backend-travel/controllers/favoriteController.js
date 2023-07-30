@@ -10,8 +10,8 @@ export const getFavorites = (req, res) => {
 };
 
 
-export const getFavoriteDescription= (req,res) =>{
-  const city= favoriteCities.find((city)=> city.cityName.toLowerCase() === req.params.cityname.toLowerCase())
+export const getFavoriteDescription = (req,res) =>{
+  const city= favoriteCities.find((city)=> city.cityName.toLowerCase() === req.query.cityname.toLowerCase())
   if(city){
     res.status(200).json(city.description);
   }else{

@@ -54,6 +54,11 @@ export class FormComponent implements OnInit {
     }
   }
 
+  setCityName(e:string){
+    this.formData.cityName = e
+    this.cardFormService.setSelectedCard({cityName:e,cityLabel : '' ,countryCode : '', description :''})
+  }
+
   handleSubmit() {
     this.weatherApi.getWeatherData(this.formData);
     this.backendApi.getCityDescriptionByName(this.formData.cityName)
