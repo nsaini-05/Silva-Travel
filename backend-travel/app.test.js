@@ -5,7 +5,9 @@ import { app } from "./server.js";
 test("GET /api/favorites for all favorite cities", async () => {
   const response = await request(app).get("/api/favorites");
   expect(response.status).toBe(200);
-  expect(response.body).toEqual(favoriteCities);
+  expect(response.body).toEqual(
+    favoriteCities.map(({ description, ...others }) => others)
+  );
 });
 
 test("GET /api/favorites/description for description of favorite cities", async () => {
