@@ -17,6 +17,7 @@ export class BackendService {
   }
 
   getCityDescriptionByName(cityName: string) {
+    this.backendApiServiceStatus.emit({ data: '', loading: true, error: '' });
     this.http.get<string>(`${this.apiUrl}description?cityname=${cityName}`).subscribe((val: string) => {
       if (val) {
         this.backendApiServiceStatus.emit({

@@ -1,4 +1,4 @@
-<div class="weather-results" *ngIf = "errorMessage || weatherData.temprature" [@fadeInOut]>
+<div class="weather-results" *ngIf = "errorMessage || weatherData.temprature || isLoading" [@fadeInOut]>
     <div *ngIf = "weatherData.temprature">
     <div class="weather-results-header">
         <img 
@@ -28,4 +28,7 @@
 <div *ngIf = "errorMessage">
    <span class="error-message"> {{errorMessage}} </span>
 </div>
+<div *ngIf = "isLoading">
+    <app-loading></app-loading>
+ </div>
 </div>

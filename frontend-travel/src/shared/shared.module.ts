@@ -2,17 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SmallCardComponent } from './small-card/small-card.component';
 import { trigger, transition, animate, style } from '@angular/animations';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
 @NgModule({
   declarations: [
-    SmallCardComponent
+    SmallCardComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule
   ],
-  exports:[SmallCardComponent]
+  exports:[SmallCardComponent, LoadingComponent]
 })
 export class SharedModule {
   static fadeInOut = trigger('fadeInOut', [

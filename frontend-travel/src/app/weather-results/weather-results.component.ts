@@ -11,6 +11,7 @@ import { SharedModule } from 'src/shared/shared.module';
 })
 export class WeatherResultsComponent implements OnInit {
   errorMessage: string = '';
+  isLoading : boolean = false;
   weatherData: WeatherData = {
     icon: '',
     name: '',
@@ -24,6 +25,7 @@ export class WeatherResultsComponent implements OnInit {
   ngOnInit(): void {
     this.weatherApi.weatherApiServiceStatus.subscribe(
       (val: WeatherApiResponse) => {
+        this.isLoading = val.loading
         if (!val.error && val.data) {
           val.data?.list?.length > 0
             ? this.filterFromForeCastData(val)

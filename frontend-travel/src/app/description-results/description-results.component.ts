@@ -12,10 +12,12 @@ import { BackendApiResponse } from '../dataTypes';
 export class DescriptionResultsComponent implements OnInit{
   description:string = ""
   errorMessage:string = ""
+  isLoading:boolean = false
   constructor(private backendApi : BackendService){
   }
   ngOnInit(): void {
     this.backendApi.backendApiServiceStatus.subscribe((val:BackendApiResponse)=> {
+      this.isLoading = val.loading
       if (!val.error && val.data) {
         this.errorMessage = ''
         this.description = val.data
