@@ -7,24 +7,25 @@ import { BackendApiResponse } from '../dataTypes';
   selector: 'app-description-results',
   templateUrl: './description-results.component.html',
   styleUrls: ['./description-results.component.css'],
-  animations: [SharedModule.fadeInOut]
+  animations: [SharedModule.fadeInOut],
 })
-export class DescriptionResultsComponent implements OnInit{
-  description:string = ""
-  errorMessage:string = ""
-  isLoading:boolean = false
-  constructor(private backendApi : BackendService){
-  }
+export class DescriptionResultsComponent implements OnInit {
+  description: string = '';
+  errorMessage: string = '';
+  isLoading: boolean = false;
+  constructor(private backendApi: BackendService) {}
   ngOnInit(): void {
-    this.backendApi.backendApiServiceStatus.subscribe((val:BackendApiResponse)=> {
-      this.isLoading = val.loading
-      if (!val.error && val.data) {
-        this.errorMessage = ''
-        this.description = val.data
-      } else {
-        this.description = ""
-        this.errorMessage = val.error
+    this.backendApi.backendApiServiceStatus.subscribe(
+      (val: BackendApiResponse) => {
+        this.isLoading = val.loading;
+        if (!val.error && val.data) {
+          this.errorMessage = '';
+          this.description = val.data;
+        } else {
+          this.description = '';
+          this.errorMessage = val.error;
+        }
       }
-    })
+    );
   }
 }

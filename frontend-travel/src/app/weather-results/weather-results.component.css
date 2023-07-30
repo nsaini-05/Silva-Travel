@@ -1,60 +1,58 @@
 .weather-results {
-    padding: 4.6rem;
-    background-color: #cceae3;
-    border-radius: 10px;
-    text-align: center;
+  padding: 4.6rem;
+  background-color: #cceae3;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .weather-results-header {
-    text-align: center;
-    margin-bottom: 3.2rem;
+  text-align: center;
+  margin-bottom: 3.2rem;
 }
 
 .city-name {
-    color: #cf711f;
-    font-weight: 600;
-    font-size: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 3.2rem;
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
 }
 
-
 .city-temp {
-    font-size: 6.2rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 1.6rem;
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
 }
 
 .city-date {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    color: #6f6f6f;
-    font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+  font-weight: 700;
 }
 
-
 .list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .list-item {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color : #333
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #333;
 }
-.parameter{
-    font-weight: 700;
+.parameter {
+  font-weight: 700;
 }
 
-.error-message{
-    font-size: 2rem;
-    color: #e52a5a;
+.error-message {
+  font-size: 2rem;
+  color: #e52a5a;
 }

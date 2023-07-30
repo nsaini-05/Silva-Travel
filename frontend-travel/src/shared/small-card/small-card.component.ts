@@ -10,22 +10,21 @@ import { CardFormDataServiceService } from 'src/app/services/shared/card-form-da
 export class SmallCardComponent implements OnInit {
   constructor(private cardFormService: CardFormDataServiceService) {}
 
-  public isCardSelected : boolean = false;
+  public isCardSelected: boolean = false;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   @Input() cityData: CityCardData = {
-    cityName : "",
-    cityLabel : "",
-    countryCode : "",
+    cityName: '',
+    cityLabel: '',
+    countryCode: '',
   };
 
   onCitySelect(cityData: CityCardData) {
     this.cardFormService.setSelectedCard(cityData);
   }
 
-  checkIfCardSelected(){
-    return this.cardFormService.isCardSelected(this.cityData)
+  checkIfCardSelected() {
+    return this.cardFormService.isCardSelected(this.cityData);
   }
 }

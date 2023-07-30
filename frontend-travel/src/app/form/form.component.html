@@ -1,25 +1,35 @@
 <div class="form-container">
-    <form class="cta-form" #ctaForm="ngForm">
-      <div>
-        <label for="cityName">City Name</label>
-        <input
-        type="text" 
-        id= "cityName"
+  <form class="cta-form" #ctaForm="ngForm">
+    <div>
+      <label for="cityName">City Name</label>
+      <input
+        type="text"
+        id="cityName"
         [ngModel]="formData.cityName"
-        (ngModelChange) = "setCityName($event)" 
+        (ngModelChange)="setCityName($event)"
         name="cityName"
-        />
-      </div>
-      <div>
-        <label for="forecastDate">Select Date For Forecast (Optional)</label>
-        <input type="date" id="forecastDate" [ngModel]="formData.forecastDate" (ngModelChange) = "selectDate($event)" name="forecastDate">
-      </div>
-      <div class="btn-container">
-        <button class="btn-submit" 
-        (click) ="handleSubmit()"
-        [ngClass]="{'btn-disabled': !checkIfFormvalid()}"
-        [disabled] = "!checkIfFormvalid()">Submit</button>
-      </div>
-      <div class="error-message">{{errorMessage}}</div>
-      </form>
-  </div>
+      />
+    </div>
+    <div>
+      <label for="forecastDate">Select Date For Forecast (Optional)</label>
+      <input
+        type="date"
+        id="forecastDate"
+        [ngModel]="formData.forecastDate"
+        (ngModelChange)="selectDate($event)"
+        name="forecastDate"
+      />
+    </div>
+    <div class="btn-container">
+      <button
+        class="btn-submit"
+        (click)="handleSubmit()"
+        [ngClass]="{ 'btn-disabled': !checkIfFormvalid() }"
+        [disabled]="!checkIfFormvalid()"
+      >
+        Submit
+      </button>
+    </div>
+    <div class="error-message">{{ errorMessage }}</div>
+  </form>
+</div>

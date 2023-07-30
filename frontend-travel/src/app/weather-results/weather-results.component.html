@@ -1,34 +1,48 @@
-<div class="weather-results" *ngIf = "errorMessage || weatherData.temprature || isLoading" [@fadeInOut]>
-    <div *ngIf = "weatherData.temprature">
+<div
+  class="weather-results"
+  *ngIf="errorMessage || weatherData.temprature || isLoading"
+  [@fadeInOut]
+>
+  <div *ngIf="weatherData.temprature">
     <div class="weather-results-header">
-        <img 
-        src="{{ weatherData.icon ? 'https://openweathermap.org/img/wn/' + weatherData.icon + '@2x.png' : '' }}"
-        >
-        <p class="city-name">
-            {{weatherData.name}}
-        </p>
-        <p class="city-temp">{{weatherData.temprature}}{{'°'}}</p>
-        <p class="city-date">{{weatherData.date}}</p>
+      <img
+        src="{{
+          weatherData.icon
+            ? 'https://openweathermap.org/img/wn/' +
+              weatherData.icon +
+              '@2x.png'
+            : ''
+        }}"
+      />
+      <p class="city-name">
+        {{ weatherData.name }}
+      </p>
+      <p class="city-temp">{{ weatherData.temprature }}{{ "°" }}</p>
+      <p class="city-date">{{ weatherData.date }}</p>
     </div>
     <ul class="list">
-        <li class="list-item">
-            <span class="parameter">Wind</span>
-            <span class="parameter-value">{{weatherData.windspeed}}{{' km/h'}}</span>
-        </li>
-        <li class="list-item">
-            <span class="parameter">Feels Like</span>
-            <span class="parameter-value">{{weatherData.feelsLike}}{{'°C'}}</span>
-        </li>
-        <li class="list-item">
-            <span class="parameter">Humidity</span>
-            <span class="parameter-value">{{weatherData.humidity}}%</span>
-        </li>
+      <li class="list-item">
+        <span class="parameter">Wind</span>
+        <span class="parameter-value"
+          >{{ weatherData.windspeed }}{{ " km/h" }}</span
+        >
+      </li>
+      <li class="list-item">
+        <span class="parameter">Feels Like</span>
+        <span class="parameter-value"
+          >{{ weatherData.feelsLike }}{{ "°C" }}</span
+        >
+      </li>
+      <li class="list-item">
+        <span class="parameter">Humidity</span>
+        <span class="parameter-value">{{ weatherData.humidity }}%</span>
+      </li>
     </ul>
-</div>
-<div *ngIf = "errorMessage">
-   <span class="error-message"> {{errorMessage}} </span>
-</div>
-<div *ngIf = "isLoading">
+  </div>
+  <div *ngIf="errorMessage">
+    <span class="error-message"> {{ errorMessage }} </span>
+  </div>
+  <div *ngIf="isLoading">
     <app-loading></app-loading>
- </div>
+  </div>
 </div>

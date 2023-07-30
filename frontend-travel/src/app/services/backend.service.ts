@@ -8,8 +8,8 @@ import { environment } from '../../environments/environment.prod';
 })
 export class BackendService {
   constructor(private http: HttpClient) {}
-  apiUrl =  environment.apiUrl;
-  private errorMessage = "Something went wrong while getting description"
+  apiUrl = environment.apiUrl;
+  private errorMessage = 'Something went wrong while getting description';
 
   backendApiServiceStatus = new EventEmitter<Object>();
   getFavoriteCities() {
@@ -18,21 +18,24 @@ export class BackendService {
 
   getCityDescriptionByName(cityName: string) {
     this.backendApiServiceStatus.emit({ data: '', loading: true, error: '' });
-    this.http.get<string>(`${this.apiUrl}description?cityname=${cityName}`).subscribe((val: string) => {
-      if (val) {
-        this.backendApiServiceStatus.emit({
-          data: val,
-          loading: false,
-          error: '',
-        });
-      } 
-  },
-  (error) =>
-  this.backendApiServiceStatus.emit({
-    data: '',
-    loading: false,
-    error: this.errorMessage,
-  })
-  )}
-
+    this.http
+      .get<string>(`${this.apiUrl}description?cityname=${cityName}`)
+      .subscribe(
+        (val: string) => {
+          if (val) {
+            this.backendApiServiceStatus.emit({
+              data: val,
+              loading: false,
+              error: '',
+            });
+          }
+        },
+        (error) =>
+          this.backendApiServiceStatus.emit({
+            data: '',
+            loading: false,
+            error: this.errorMessage,
+          })
+      );
+  }
 }

@@ -8,7 +8,6 @@ import {
 } from 'src/app/dataTypes';
 import { environment } from '../../../environments/environment.prod';
 
-
 @Injectable({
   providedIn: 'root',
 })

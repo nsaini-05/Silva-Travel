@@ -1,13 +1,12 @@
 <div class="description-container" *ngIf="description" [@fadeInOut]>
-    <p class="description-text">
-       {{description}}
-    </p>
+  <p class="description-text">
+    {{ description }}
+  </p>
 </div>
-<div class="description-container" *ngIf = "errorMessage">
-    <span class="error-message"> {{errorMessage}} </span>
- </div>
+<div class="description-container" *ngIf="errorMessage">
+  <span class="error-message"> {{ errorMessage }} </span>
+</div>
 
- <div class="description-container" *ngIf = "isLoading">
-    <app-loading></app-loading>
- </div>
- 
+<div class="description-container" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>
