@@ -3,8 +3,8 @@
 ![image](https://github.com/nsaini-05/Silva-Travel/assets/12828781/69a39bb2-3f5a-43cf-ac81-dce71bd29384)
 
 
-# Silva-Travel
-Silva-Travel is travel planner web application that provides users with current & forecast weather for upto 5 days for selected city. It also provides a small description for city. 
+# TripTempo
+TripTempo is travel planner web application that provides users with current & forecast weather for upto 5 days for selected city. It also provides a small description for city. 
 
 ## Features
 - Get current weather details such as temprature, humidity, and wind speed for the selected city.
@@ -22,13 +22,13 @@ Silva-Travel is travel planner web application that provides users with current 
 ## Running Locally
 ### Running Backend
 - Clone Repository
-- Change directory to Silva-Travel (Project root Directory)
+- Change directory to TripTempo (Project root Directory)
 - Run command:  npm install to install dependencies
 - **Please make sure that port 5000 is free before running the application.**
 - Run command: npm start
 
 ### Running Test 
-- Change directory to Silva-Travel (Project root Directory)
+- Change directory to TripTempo (Project root Directory)
 - Run command: npm test
   
 ### Running Frontend
